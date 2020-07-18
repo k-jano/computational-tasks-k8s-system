@@ -1,0 +1,14 @@
+{
+  "name": "@kubeduler/jqm",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ioredis": "^4.17.3",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "foreman": "^3.0.1"
+  }
+}
