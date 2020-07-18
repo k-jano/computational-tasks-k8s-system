@@ -24,14 +24,14 @@ const scheduleJob = async (req, res) => {
     if (workdir && !absolutePathRegex.test(workdir))
       throw new Error(`Invalid absolute path for workdir: ${workdir}`);
 
-    const currentDir = script.split('/').splice(-1, 1).join('/');
-    const outPath = path.join(currentDir, `job_${jobId}.out`);
-    const errPath = path.join(currentDir, `job_${jobId}.err`);
+    const currentDir = script.split('/').slice(0, -1).join('/');
     const jobId = await JobRepo.defineNew({
       args,
       script,
       workdir,
     });
+    const outPath = path.join(currentDir, `job_${jobId}.out`);
+    const errPath = path.join(currentDir, `job_${jobId}.err`);
 
     return res.status(200).json({
       status: 'SCHEDULED',

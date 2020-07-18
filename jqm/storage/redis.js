@@ -1,9 +1,7 @@
 const Redis = require("ioredis");
 
 module.exports = new Redis({
-  port: 6379, // Redis port
-  host: "127.0.0.1", // Redis host
-  family: 4, // 4 (IPv4) or 6 (IPv6)
-  password: "auth",
+  port: 30018, // Redis port
+  host: "172.17.0.2", // Redis host
   db: 0,
 });
