@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jqm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: jqm
+  template:
+    metadata:
+      labels:
+        name: jqm
+    spec:
+      containers:
+      - name: jqm
+        image: kubeduler/jqm
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: jqm
+          containerPort: 5000

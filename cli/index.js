@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 const { config } = require('dotenv');
 const axios = require('axios').default;
+const { JQM_URL } = require('./config');
 
 config();
 
@@ -12,7 +13,9 @@ if(process.argv.length < 3) {
 const scriptPath = process.argv[2];
 const args = process.argv.slice(3);
 
-axios.post(`${process.env.JQM_URL}/jobs/schedule`, {
+console.log(JQM_URL)
+
+axios.post(`${JQM_URL}/jobs/schedule`, {
   script: scriptPath,
   args: args,
   workdir: ''
@@ -20,5 +23,4 @@ axios.post(`${process.env.JQM_URL}/jobs/schedule`, {
   console.log(res);
 }).catch(err => {
   console.error(err);
-  //console.er
 })
