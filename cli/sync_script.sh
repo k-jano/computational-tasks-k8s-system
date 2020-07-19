@@ -1,0 +1,1 @@
+rsync -r -a -v -e ssh test.sh root@172.17.0.2:/mnt/data/jobs/

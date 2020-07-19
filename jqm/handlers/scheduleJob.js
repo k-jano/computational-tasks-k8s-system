@@ -36,7 +36,7 @@ const scheduleJob = async (req, res) => {
       workdir,
     });
 
-    await JobQueue.enque(jobId);
+    await JobQueue.enqueue(jobId);
     await StatusRepo.set(jobId, STATUS_SCHEDULED);
 
     const outPath = path.join(currentDir, `job_${jobId}.out`);
