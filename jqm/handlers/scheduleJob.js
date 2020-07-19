@@ -1,5 +1,9 @@
 const path = require('path');
 const JobRepo = require('../repositories/jobRepository');
+const JobQueue = require('../repositories/jobPriorityQueue');
+const StatusRepo = require('../repositories/statusRepository');
+
+const STATUS_SCHEDULED = 'SCHEDULED';
 
 const validateRequiredParams = (req, res, next) => {
   const { script } = req.body;
@@ -27,14 +31,19 @@ const scheduleJob = async (req, res) => {
     const currentDir = script.split('/').slice(0, -1).join('/');
     const jobId = await JobRepo.defineNew({
       args,
+      currentDir,
       script,
       workdir,
     });
+
+    await JobQueue.enque(jobId);
+    await StatusRepo.set(jobId, STATUS_SCHEDULED);
+
     const outPath = path.join(currentDir, `job_${jobId}.out`);
     const errPath = path.join(currentDir, `job_${jobId}.err`);
 
     return res.status(200).json({
-      status: 'SCHEDULED',
+      status: STATUS_SCHEDULED,
       job: {
         id: jobId,
         priority: 100,
