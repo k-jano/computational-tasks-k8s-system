@@ -1,1 +1,1 @@
-exports.JQM_URL = 'htt://localhost:5000';
+exports.JQM_URL = 'htt://172.17.0.2:32576';

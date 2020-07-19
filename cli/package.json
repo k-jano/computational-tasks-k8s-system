@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": false,
   "bin": {
-    "kubedule": "./index.js"
+    "kubeduler": "./index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
