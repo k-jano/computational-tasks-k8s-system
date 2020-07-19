@@ -1,0 +1,17 @@
+{
+  "name": "executor",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Jakub Janowski; Krzysztof Kmiecik",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nf run node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "foreman": "^3.0.1"
+  }
+}

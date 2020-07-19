@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: executor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: executor
+  template:
+    metadata:
+      labels:
+        name: executor
+    spec:
+      volumes: 
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-volume
+      containers:
+      - name: executor
+        image: kubeduler/executor
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: "/pv"
+          name: task-pv-storage
