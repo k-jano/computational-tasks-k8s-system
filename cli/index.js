@@ -20,7 +20,7 @@ axios.post(`${JQM_URL}/jobs/schedule`, {
   args: args,
   workdir: ''
 }).then(res => {
-  console.log(res);
+  console.log(res.data);
 }).catch(err => {
   console.error(err);
 })
