@@ -9,7 +9,7 @@
     "start": "nf run node index.js"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "foreman": "^3.0.1"
