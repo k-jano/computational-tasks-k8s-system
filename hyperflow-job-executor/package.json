@@ -12,7 +12,7 @@
     "pidtree": "^0.3.0",
     "pidusage": "^2.0.18",
     "read-env": "^2.0.0",
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "systeminformation": "^4.22.4"
   }
 }
