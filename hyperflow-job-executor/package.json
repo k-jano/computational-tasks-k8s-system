@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@stroncium/procfs": "^1.0.0",
-    "log4js": "^6.1.0",
+    "log4js": "^6.4.0",
     "pidtree": "^0.3.0",
     "pidusage": "^2.0.18",
     "read-env": "^2.0.0",
