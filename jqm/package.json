@@ -7,7 +7,7 @@
     "start": "nf run node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ioredis": "^4.17.3",
     "uuid": "^8.2.0"
   },
